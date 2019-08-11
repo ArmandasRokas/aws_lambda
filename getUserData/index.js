@@ -9,13 +9,13 @@ exports.handler = function (event, context, callback) {
         TableName: "Users",
         Key: {
             id: {
-                s: "12345"
+                S: "12345"
             }
         }
     }
     ddb.getItem(params, (error,data) => {
-        if(err){
-            console.log(err);
+        if(error){
+            console.log(error);
         }
         console.log(data);
     })
